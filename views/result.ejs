@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+  <script>
+
+      function callSearch()
+      {
+          location.href = "/search/"+document.getElementById('srch-term').value;
+      }
+  </script>
+
+  <input class="form-control-custom" placeholder="Search by Gene Name" name="srch-term" id="srch-term" type="text">
+  <button type="submit" onclick="callSearch()" id="searchButton" style="visibility: hidden"></button>
+  <script>
+      $("#srch-term").keyup(function(event) {
+          if (event.keyCode == 13) {
+              $("#searchButton").click();
+          }
+      });
+  </script>
+
+  <table>
+      <tr>
+
+      <td>
+          <h4>Gene Name: </h4>
+      </td>
+          <td style="font-size: 18px">
+              <%=post[0]['gene']%>
+          </td>
+      </tr>
+      <tr>
+
+          <td>
+              <h4>Gene ID: </h4>
+          </td>
+          <td style="font-size: 18px">
+              <%=post[0]['gene_id']%>
+          </td>
+      </tr>
+      <tr>
+
+          <td>
+              <h4>Sample_1: </h4>
+          </td>
+          <td style="font-size: 18px">
+              <%=post[0]['sample_1']%>
+          </td>
+      </tr>
+      <tr>
+
+          <td>
+              <h4>Sample_2: </h4>
+          </td>
+          <td style="font-size: 18px">
+              <%=post[0]['sample_2']%>
+          </td>
+      </tr>
+      <tr>
+
+          <td>
+              <h4>Value1: </h4>
+          </td>
+          <td style="font-size: 18px">
+              <%=post[0]['value1']%>
+          </td>
+      </tr>
+      <tr>
+
+          <td>
+              <h4>Value2: </h4>
+          </td>
+          <td style="font-size: 18px">
+              <%=post[0]['value2']%>
+          </td>
+      </tr>
+      <tr>
+
+          <td>
+              <h4>PValue: </h4>
+          </td>
+          <td style="font-size: 18px">
+              <%=post[0]['pvalue']%>
+          </td>
+      </tr>
+      <tr>
+
+          <td>
+              <h4>QValue: </h4>
+          </td>
+          <td style="font-size: 18px">
+              <%=post[0]['qvalue']%>
+          </td>
+      </tr>
+      <tr>
+
+          <td>
+              <h4>Locus: </h4>
+          </td>
+          <td style="font-size: 18px">
+              <%=post[0]['locus']%>
+          </td>
+      </tr>
+      <tr>
+
+          <td>
+              <h4>Test Stat: </h4>
+          </td>
+          <td style="font-size: 18px">
+              <%=post[0]['test_stat']%>
+          </td>
+      </tr>
+      <tr>
+
+          <td>
+              <h4>Fold Change: </h4>
+          </td>
+          <td style="font-size: 18px">
+              <%=post[0]['fold_change']%>
+          </td>
+      </tr>
+      <tr>
+
+          <td>
+              <h4>Status: </h4>
+          </td>
+          <td style="font-size: 18px">
+              <%=post[0]['status']%>
+          </td>
+      </tr>
+
+  </table>
+  </body>
+
+</html>
